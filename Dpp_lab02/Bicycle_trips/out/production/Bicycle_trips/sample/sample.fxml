@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane minHeight="300.0" minWidth="500.0" prefHeight="400.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <left>
+        <ListView fx:id="bicycleTripListView" onMouseClicked="#handleClickListView">
+
+        </ListView>
+    </left>
+   <center>
+      <TabPane fx:id="tripAdminTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Trip Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <TextArea fx:id="itemDetailsTextArea" prefHeight="123.0" prefWidth="220.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0" />
+                     <ImageView fx:id="imageDetailsImageView" fitHeight="200.0" fitWidth="219.0" layoutX="16.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="154.0">
+                        <effect>
+                           <Lighting>
+                              <bumpInput>
+                                 <Shadow />
+                              </bumpInput>
+                              <light>
+                                 <Light.Distant />
+                              </light>
+                           </Lighting>
+                        </effect></ImageView>
+              </AnchorPane>
+            </content>
+          </Tab>
+
+                <Tab text="Add New Trip">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+                                <TextArea fx:id="detailsInputTextArea" layoutX="16.0" layoutY="81.0" prefHeight="65.0" prefWidth="220.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="81.0" />
+                                <TextField fx:id="titleInputTextField" layoutX="16.0" layoutY="33.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+                                <Text layoutX="16.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="65.0" />
+                                <Button id="submitInputButton" layoutX="27.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleClickSubmitInputButton" text="Submit" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" />
+                                <DatePicker fx:id="dateInputDatePicker" layoutX="15.0" layoutY="294.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="15.0" />
+                                <Text layoutX="15.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" AnchorPane.bottomAnchor="77.0" AnchorPane.leftAnchor="15.0" />
+                                <Text layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" AnchorPane.bottomAnchor="107.98828125" AnchorPane.leftAnchor="16.0" />
+                                <Button layoutX="59.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleInputClickLoadButton" text="Load" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="65.0" />
+                        <ImageView fx:id="imageInputImageView" fitHeight="74.0" fitWidth="220.0" layoutX="26.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="162.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Edit Trip">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+                                <TextArea fx:id="detailsEditTextArea" layoutX="16.0" layoutY="81.0" prefHeight="69.0" prefWidth="220.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="81.0" />
+                                <TextField fx:id="titleEditTextField" layoutX="16.0" layoutY="33.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="33.0" />
+                                <Text layoutX="16.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="65.0" />
+                                <Button id="submitEditButton" layoutX="27.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleClickSubmitEditButton" text="Submit edit" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" />
+                                <DatePicker fx:id="dateEditDatePicker" layoutX="15.0" layoutY="294.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="15.0" />
+                                <Text layoutX="15.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" AnchorPane.bottomAnchor="77.0" AnchorPane.leftAnchor="15.0" />
+                                <Button layoutX="72.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleEditClickLoadButton" text="Load" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="65.0" />
+                                <Text layoutX="21.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="47.9765625" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="16.0" />
+                                <ImageView fx:id="imageEditImageView" fitHeight="82.0" fitWidth="219.0" layoutX="38.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="152.0" />
+                                <Button layoutX="272.0" layoutY="296.0" mnemonicParsing="false" onMouseClicked="#handleClickDeleteButton" text="Delete Trip" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#defaultResetDatabse" text="Reset database to default" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+
+</BorderPane>
