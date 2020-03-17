@@ -24,7 +24,7 @@ public class Database {
         }
     }
 
-    public void createTable(){
+    public boolean createTable(){
         try {
             stmt = c.createStatement();
             query = "CREATE TABLE TRIPS" +
@@ -42,7 +42,7 @@ public class Database {
         }
     }
 
-    public void dropTable(){
+    public boolean dropTable(){
         try {
             stmt = c.createStatement();
             query = "DROP TABLE TRIPS;";
@@ -54,7 +54,7 @@ public class Database {
         }
     }
 
-    public void addEntry(BicycleTrip trip){
+    public boolean addEntry(BicycleTrip trip){
         try {
             stmt = c.createStatement();
             query = "INSERT INTO TRIPS (DESC, DETAILS, DATE, IMG_URL)" +
@@ -99,7 +99,7 @@ public class Database {
         }
     }
 
-    public void deleteEntry(String name){
+    public boolean deleteEntry(String name){
         try {
             stmt = c.createStatement();
             query = "DELETE FROM TRIPS WHERE DESC='" + name + "';";
